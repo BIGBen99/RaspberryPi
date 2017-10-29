@@ -58,7 +58,7 @@ Se connecter au Raspberry Pi avec l'utilisateur biguser
 
 * Editer le fichier /etc/ssh/sshd_config
 
-* Modifier la ligne #Port 22 pour remplacer le port 22 (port par défaut) par un autre numéro de port (de préférence entre 1000 et 65535
+* Modifier la ligne #Port 22 pour remplacer le port 22 (port par défaut) par un autre numéro de port (de préférence entre 1000 et 65535)
 
 * Relancer le service ssh en exécutant la commande sudo service ssh restart
 
