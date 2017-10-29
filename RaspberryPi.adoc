@@ -96,3 +96,4 @@ https://www.raspberrypi.org/documentation/installation/installing-images/linux.m
 http://kamilslab.com/2017/01/29/5-best-basic-security-tips-and-tricks-every-raspberry-pi-user-needs-to-take/ +
 https://guide.ubuntu-fr.org/server/user-management.html
 https://doc.ubuntu-fr.org/fail2ban
+http://kamilslab.com/2016/12/18/3-steps-to-take-to-improve-the-security-of-your-raspberry-pi-server/
