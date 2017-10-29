@@ -54,25 +54,33 @@ Se connecter au Raspberry Pi avec l'utilisateur biguser
 
 * Exécuter la commande rm /etc/sudoers.d/010_pi-nopasswd
 
+= Changer le port SSH sur le Raspberry Pi
+
+* Editer le fichier /etc/ssh/sshd_config
+
+* Modifier la ligne #Port 22 pour remplacer le port 22 (port par défaut) par un autre numéro de port (de préférence entre 1000 et 65535
+
+* Relancer le service ssh en exécutant la commande sudo service ssh restart
+
 = Installer Fail2Ban pour interdire les tentatives de force brute sur notre Raspberry Pi
 
 * Exécuter la commande sudo apt update
 
 * Exécuter la commande sudo apt install fail2ban
 
-* Créer le fichier /etc/fail2ban/jail.local avec le contenu ci-dessous:
-[DEFAULT]
-ignoreip = 127.0.0.1 192.168.0.127
-findtime = 3600
-bantime = 86400
-
-[ssh]
-
-enabled = true
-port = ssh
-filter = sshd
-logpath = /var/log/auth.log
-banaction = iptables-allports
+* Créer le fichier /etc/fail2ban/jail.local avec le contenu ci-dessous: +
+[DEFAULT] +
+ignoreip = 127.0.0.1 192.168.1.138 +
+findtime = 3600 +
+bantime = 86400 +
+ +
+[ssh] +
+ +
+enabled = true +
+port = ssh +
+filter = sshd +
+logpath = /var/log/auth.log +
+banaction = iptables-allports +
 maxretry = 3
 
 * Exécuter la commande sudo service fail2ban restart
