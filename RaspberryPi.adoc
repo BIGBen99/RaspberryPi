@@ -2,6 +2,27 @@
 
 = Le matériel
 
+[#img-RaspberryPiModeleBRev2]
+.Un Raspberry Pi Modèle B Rev 2
+image::raspberrypirev2.jpg[Raspberry Pi Modèle B Rev 2,300,200]
+
+[#img-RaspberryPi3ModeleB]
+.Un Raspberry Pi 3 Modèle B
+[link=https://www.raspberrypi.org/products/raspberry-pi-3-model-b/]
+image::Raspberry-Pi-3-462x322.jpg[Raspberry Pi 3 Modèle B,300,200]
+
+[#img-MicroSD8GB]
+.Une carte Micro SD (8GB minimum)
+image::MicroSD8GB.jpg[Carte Micro SD 8GB,300,200]
+
+[#img-AlimentationMicroUSB]
+.Une alimentation micro USB (2A)
+image::AlimentationMicroUSB.jpg[Alimentation micro USB,300,200]
+
+[#img-EthernetCable]
+.Un cable Ethernet
+image::EthernetCable.jpg[Cable Ethernet,300,200]
+
 Un Raspberry Pi 1 Modèle B Rev 2 +
 cat /proc/cpuinfo => Le numéro de Revision donne le type de Raspberry Pi +
 cat /proc/device-tree/model => donne directement le type de Raspberry Pi +
