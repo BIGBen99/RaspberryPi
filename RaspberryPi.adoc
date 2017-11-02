@@ -118,3 +118,7 @@ http://kamilslab.com/2017/01/29/5-best-basic-security-tips-and-tricks-every-rasp
 https://guide.ubuntu-fr.org/server/user-management.html
 https://doc.ubuntu-fr.org/fail2ban
 http://kamilslab.com/2016/12/18/3-steps-to-take-to-improve-the-security-of-your-raspberry-pi-server/
+http://www.tropfacile.net/doku.php
+http://www.tomshardware.fr/articles/raspberry-pi-overclcking,1-43876.html
+https://www.raspberrypi.org/forums/viewtopic.php?f=65&t=21148 (rpi-update)
+https://raspberrypi.stackexchange.com/questions/4355/do-i-still-need-rpi-update-if-i-am-using-the-latest-version-of-raspbian (update & upgrade)
