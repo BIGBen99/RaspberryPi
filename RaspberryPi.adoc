@@ -65,11 +65,11 @@ https://www.raspberrypi.org/documentation/remote-access/ssh/
 
 Se connecter au Raspberry Pi avec l'utilisateur pi
 
-* Exécuter la commande useradd --password $(openssl passwd -1 MyPassword) --groups sudo --create-home --shell /bin/bash biguser
+* Exécuter la commande useradd --password $(openssl passwd -1 MyPassword) --groups sudo --create-home --shell /bin/bash myuser
 
-* Exécuter la commande echo "biguser ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/010_biguser-nopasswd
+* Exécuter la commande echo "myuser ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/010_myuser-nopasswd
 
-Se connecter au Raspberry Pi avec l'utilisateur biguser
+Se connecter au Raspberry Pi avec l'utilisateur myuser
 
 * Exécuter la commande userdel -r pi
 
@@ -106,6 +106,47 @@ maxretry = 3
 
 * Exécuter la commande sudo service fail2ban restart
 
+= Automatiser les mises à jour du Raspberry Pi
+
+Pour mettre à jour automatiquement le Raspberry Pi, nous allons procéder en 2 étapes :
+. Créer un script de mise à jour (sysUpdateUpgrade.sh)
+. Automatiser l'exécution régulière du script (crontab)
+
+== Le script sysUpdateUpgrade.sh
+
+----
+#!/bin/bash
+
+# Récupération de la date de début d'exécution du script pour permettre le calcul de la durée du script en fin de script
+start=$(date +%s)
+
+# Définition du dossier de log
+LOG_PATH=/home/myuser/log
+
+# Si le dossier de log n'existe pas, on le crée, sinon, on affiche un message
+if [ ! -d "$LOG_PATH" ]; then
+  mkdir $LOG_PATH
+else
+  echo "Directory $LOG_PATH already exists"
+fi
+
+echo "$(date +%Y-%m-%dT%H:%M:%S.%N%::z)|INFO|Start of system update & upgrade" >> $LOG_PATH/sys-update-upgrade.log
+if apt-get --quiet update --quiet >> $LOG_PATH/$(date +%Y%m%d)_sys-update-upgrade.trace; then
+  apt-get --quiet --yes upgrade >> $LOG_PATH/$(date +%Y%m%d)_sys-update-upgrade.trace
+  apt-get --quiet --yes dist-upgrade >> $LOG_PATH/$(date +%Y%m%d)_sys-update-upgrade.trace
+else
+  ERROR_CODE=$?
+  echo "$(date +%Y-%m-%dT%H:%M:%S.%N%::z)|ERROR|Command \"apt-get update\" failed (error code : $ERROR_CODE)" >> $LOG_PATH/sys-update-upgrade.log
+fi
+apt-get --yes autoremove >> $LOG_PATH/$(date +%Y%m%d)_sys-update-upgrade.trace
+end=`date +%s`
+runtime=$((end-start))
+echo "$(date +%Y-%m-%dT%H:%M:%S.%N%::z)|INFO|End of system update & upgrade|$runtime" >> $LOG_PATH/sys-update-upgrade.log
+exit $ERROR_CODE
+----
+
+== L'automatisation
+
 = Sources
 
 https://www.raspberrypi.org/ +
@@ -115,17 +156,17 @@ https://www.raspberrypi.org/help/faqs/#topPower +
 https://www.raspberrypi.org/downloads/raspbian/ +
 https://www.raspberrypi.org/documentation/installation/installing-images/linux.md +
 http://kamilslab.com/2017/01/29/5-best-basic-security-tips-and-tricks-every-raspberry-pi-user-needs-to-take/ +
-https://guide.ubuntu-fr.org/server/user-management.html
-https://doc.ubuntu-fr.org/fail2ban
-http://kamilslab.com/2016/12/18/3-steps-to-take-to-improve-the-security-of-your-raspberry-pi-server/
-http://www.tropfacile.net/doku.php
-http://www.tomshardware.fr/articles/raspberry-pi-overclcking,1-43876.html
-https://www.raspberrypi.org/forums/viewtopic.php?f=65&t=21148 (rpi-update)
-https://raspberrypi.stackexchange.com/questions/4355/do-i-still-need-rpi-update-if-i-am-using-the-latest-version-of-raspbian (update & upgrade)
-http://shadowblog.fr/article13/ajouter-un-motd-au-raspberry-pi (Rpi temperature, ...)
-https://www.elinux.org/RPI_vcgencmd_usage
-https://www.raspberrypi.org/forums/viewtopic.php?f=28&t=50373 (vcgencmd commands list)
-https://www.raspberrypi.org/forums/viewtopic.php?t=34994 (RPi temperature)
-https://www.raspberrypi.org/forums/viewtopic.php?t=22180 (hardware info (CPU, RAM, Disk, ...)
-https://www.inzecloud.net/index.php/2014/12/31/raspberry-pi-recuperer-la-temperature-cpu-dans-un-fichier/
-https://www.cyberciti.biz/faq/linux-find-out-raspberry-pi-gpu-and-arm-cpu-temperature-command/
+https://guide.ubuntu-fr.org/server/user-management.html +
+https://doc.ubuntu-fr.org/fail2ban +
+http://kamilslab.com/2016/12/18/3-steps-to-take-to-improve-the-security-of-your-raspberry-pi-server/ +
+http://www.tropfacile.net/doku.php +
+http://www.tomshardware.fr/articles/raspberry-pi-overclcking,1-43876.html +
+https://www.raspberrypi.org/forums/viewtopic.php?f=65&t=21148 (rpi-update) +
+https://raspberrypi.stackexchange.com/questions/4355/do-i-still-need-rpi-update-if-i-am-using-the-latest-version-of-raspbian (update & upgrade) +
+http://shadowblog.fr/article13/ajouter-un-motd-au-raspberry-pi (Rpi temperature, ...) +
+https://www.elinux.org/RPI_vcgencmd_usage +
+https://www.raspberrypi.org/forums/viewtopic.php?f=28&t=50373 (vcgencmd commands list) +
+https://www.raspberrypi.org/forums/viewtopic.php?t=34994 (RPi temperature) +
+https://www.raspberrypi.org/forums/viewtopic.php?t=22180 (hardware info (CPU, RAM, Disk, ...) +
+https://www.inzecloud.net/index.php/2014/12/31/raspberry-pi-recuperer-la-temperature-cpu-dans-un-fichier/ +
+https://www.cyberciti.biz/faq/linux-find-out-raspberry-pi-gpu-and-arm-cpu-temperature-command/ +
