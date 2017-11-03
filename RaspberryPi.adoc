@@ -122,3 +122,10 @@ http://www.tropfacile.net/doku.php
 http://www.tomshardware.fr/articles/raspberry-pi-overclcking,1-43876.html
 https://www.raspberrypi.org/forums/viewtopic.php?f=65&t=21148 (rpi-update)
 https://raspberrypi.stackexchange.com/questions/4355/do-i-still-need-rpi-update-if-i-am-using-the-latest-version-of-raspbian (update & upgrade)
+http://shadowblog.fr/article13/ajouter-un-motd-au-raspberry-pi (Rpi temperature, ...)
+https://www.elinux.org/RPI_vcgencmd_usage
+https://www.raspberrypi.org/forums/viewtopic.php?f=28&t=50373 (vcgencmd commands list)
+https://www.raspberrypi.org/forums/viewtopic.php?t=34994 (RPi temperature)
+https://www.raspberrypi.org/forums/viewtopic.php?t=22180 (hardware info (CPU, RAM, Disk, ...)
+https://www.inzecloud.net/index.php/2014/12/31/raspberry-pi-recuperer-la-temperature-cpu-dans-un-fichier/
+https://www.cyberciti.biz/faq/linux-find-out-raspberry-pi-gpu-and-arm-cpu-temperature-command/
