@@ -90,18 +90,18 @@ Se connecter au Raspberry Pi avec l'utilisateur myuser
 
 * Créer le fichier /etc/fail2ban/jail.local avec le contenu ci-dessous: +
 ----
-[DEFAULT] +
-ignoreip = 127.0.0.1 192.168.1.138 +
-findtime = 3600 +
-bantime = 86400 +
- +
-[ssh] +
- +
-enabled = true +
-port = ssh +
-filter = sshd +
-logpath = /var/log/auth.log +
-banaction = iptables-allports +
+[DEFAULT]
+ignoreip = 127.0.0.1 192.168.1.138
+findtime = 3600
+bantime = 86400
+
+[ssh]
+
+enabled = true
+port = ssh
+filter = sshd
+logpath = /var/log/auth.log
+banaction = iptables-allports
 maxretry = 3
 ----
 
@@ -110,8 +110,9 @@ maxretry = 3
 = Automatiser les mises à jour du Raspberry Pi
 
 Pour mettre à jour automatiquement le Raspberry Pi, nous allons procéder en 2 étapes :
-.Créer un script de mise à jour (sysUpdateUpgrade.sh)
-.Automatiser l'exécution régulière du script (crontab)
+
+. Créer un script de mise à jour (sysUpdateUpgrade.sh)
+. Automatiser l'exécution régulière du script (crontab)
 
 == Le script sysUpdateUpgrade.sh
 
