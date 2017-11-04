@@ -23,7 +23,6 @@ image::AlimentationMicroUSB.jpg[Alimentation micro USB,300,200]
 .Un cable Ethernet
 image::EthernetCable.jpg[Cable Ethernet,300,200]
 
-Un Raspberry Pi 1 Modèle B Rev 2 +
 cat /proc/cpuinfo => Le numéro de Revision donne le type de Raspberry Pi +
 cat /proc/device-tree/model => donne directement le type de Raspberry Pi +
 https://www.raspberrypi-spy.co.uk/2012/09/checking-your-raspberry-pi-board-version/ +
@@ -90,6 +89,7 @@ Se connecter au Raspberry Pi avec l'utilisateur myuser
 * Exécuter la commande sudo apt install fail2ban
 
 * Créer le fichier /etc/fail2ban/jail.local avec le contenu ci-dessous: +
+----
 [DEFAULT] +
 ignoreip = 127.0.0.1 192.168.1.138 +
 findtime = 3600 +
@@ -103,14 +103,15 @@ filter = sshd +
 logpath = /var/log/auth.log +
 banaction = iptables-allports +
 maxretry = 3
+----
 
 * Exécuter la commande sudo service fail2ban restart
 
 = Automatiser les mises à jour du Raspberry Pi
 
 Pour mettre à jour automatiquement le Raspberry Pi, nous allons procéder en 2 étapes :
-. Créer un script de mise à jour (sysUpdateUpgrade.sh)
-. Automatiser l'exécution régulière du script (crontab)
+.Créer un script de mise à jour (sysUpdateUpgrade.sh)
+.Automatiser l'exécution régulière du script (crontab)
 
 == Le script sysUpdateUpgrade.sh
 
@@ -146,6 +147,13 @@ exit $ERROR_CODE
 ----
 
 == L'automatisation
+
+Pour automatiser l'exécution du script de mise à jour, il faut ajouter une entrée à la crontab.
+
+* Exécuter la commande suivante sudo crontab -e qui va permettre d'éditer la crontab de l'utilisateur root
+
+* Saisir la ligne ci-dessous dans le fichier pour exécuter le script tous les jours à minuit.
+0 0 * * * /home/myuser/sysUpdateUpgrade.sh
 
 = Sources
 
