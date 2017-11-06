@@ -156,6 +156,10 @@ Pour automatiser l'exécution du script de mise à jour, il faut ajouter une ent
 * Saisir la ligne ci-dessous dans le fichier pour exécuter le script tous les jours à minuit.
 0 0 * * * /home/myuser/sysUpdateUpgrade.sh
 
+= Installer apache (https://httpd.apache.org/)
+
+* Exécuter la commande sudo apt-get install apache2
+
 = Sources
 
 https://www.raspberrypi.org/ +
@@ -179,3 +183,5 @@ https://www.raspberrypi.org/forums/viewtopic.php?t=34994 (RPi temperature) +
 https://www.raspberrypi.org/forums/viewtopic.php?t=22180 (hardware info (CPU, RAM, Disk, ...) +
 https://www.inzecloud.net/index.php/2014/12/31/raspberry-pi-recuperer-la-temperature-cpu-dans-un-fichier/ +
 https://www.cyberciti.biz/faq/linux-find-out-raspberry-pi-gpu-and-arm-cpu-temperature-command/ +
+https://www.raspberrypi.org/documentation/remote-access/web-server/apache.md +
+https://raspbian-france.fr/installer-serveur-web-raspberry/
