@@ -156,6 +156,17 @@ Pour automatiser l'exécution du script de mise à jour, il faut ajouter une ent
 * Saisir la ligne ci-dessous dans le fichier pour exécuter le script tous les jours à minuit.
 0 0 * * * /home/myuser/sysUpdateUpgrade.sh
 
+= Monter un partage NFS
+
+L'objectif est de stocker l'ensemble des produites hors de la carte SD du Raspberry Pi (sur un NAS par exemple).
+Cela me permettra de reconstruire le système facilement et rapidement (pas besoin de faire des sauvegarde de données).
+
+* Exécuter la commande sudo mkdir /mnt/nas
+
+* Exécuter la commande sudo chmod 777 /mnt/nas
+
+* Ajouter dans le fichier /etc/fstab la ligne 192.168.1.99:/volume1/myshare /mnt/nas nfs
+
 = Installer apache (https://httpd.apache.org/)
 
 * Exécuter la commande sudo apt-get install apache2
