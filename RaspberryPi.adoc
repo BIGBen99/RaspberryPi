@@ -158,7 +158,7 @@ Pour automatiser l'exécution du script de mise à jour, il faut ajouter une ent
 
 = Monter un partage NFS
 
-L'objectif est de stocker l'ensemble des produites hors de la carte SD du Raspberry Pi (sur un NAS par exemple).
+L'objectif est de stocker l'ensemble des données produites hors de la carte SD du Raspberry Pi (sur un NAS par exemple).
 Cela me permettra de reconstruire le système facilement et rapidement (pas besoin de faire des sauvegarde de données).
 
 * Exécuter la commande sudo mkdir /mnt/nas
