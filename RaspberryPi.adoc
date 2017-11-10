@@ -171,6 +171,9 @@ Cela me permettra de reconstruire le système facilement et rapidement (pas beso
 
 * Exécuter la commande sudo apt-get install apache2
 
+* Comme nous avons monter un partage NFS pour le stockage des données, nous allons y créer un dossier /apache2/www/html.
+Pour cela, exécuter la commande mkdir --parents /mnt/nas/apache2/www/html
+
 = Sources
 
 https://www.raspberrypi.org/ +
