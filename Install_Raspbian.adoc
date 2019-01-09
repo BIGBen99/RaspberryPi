@@ -1,12 +1,11 @@
 = Install https://www.raspberrypi.org/downloads/raspbian/[Raspbian] on a https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/[Raspberry Pi 3]
 BIGBen99
-v20190109-003
-:appversion: 003
+v20190109-007
 
 This guide can be applied to all Raspberry Pi cards
 
-Prerequisites
+== Prerequisites
 
-External links
+== External links
 https://www.raspberrypi.org/downloads/raspbian/[Raspbian] +
 https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/[Raspberry Pi 3]
