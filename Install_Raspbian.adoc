@@ -1,12 +1,12 @@
 = Install https://www.raspberrypi.org/downloads/raspbian/[Raspbian] on an SD Card
 BIGBen99
-v20190109-009
+v20190109-010
 
 This guide explains how to install Raspbian on an SD card.
 
 == Prerequisites
 1 microSD card over 8GB +
-1 Computer with a SD card reader +
+1 Computer with a SD card reader and an Internet connection +
 
 == Installing Raspbian
 
