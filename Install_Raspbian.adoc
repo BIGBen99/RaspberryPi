@@ -1,6 +1,6 @@
 = Install https://www.raspberrypi.org/downloads/raspbian/[Raspbian] on an SD Card
 BIGBen99
-v20190109-010
+v20190109-011
 
 This guide explains how to install Raspbian on an SD card.
 
@@ -11,11 +11,12 @@ This guide explains how to install Raspbian on an SD card.
 == Installing Raspbian
 
 === Download the image
+you can find the official images of Raspbian in the https://www.raspberrypi.org/downloads/raspbian/[download section of the Raspberry Pi website]. Select the image you need and download it.
 
 === Write the downloaded image to the SD card
 
 == Conclusion
-You now have a microSD card with the Raspbian operating system installed. Your SD card is ready to be used in a Raspberry Pi
+You now have a microSD card with the Raspbian operating system installed. Your SD card is ready to be used in a https://www.raspberrypi.org/products/[Raspberry Pi board]
 
 == External links
 https://www.raspberrypi.org/downloads/raspbian/[Raspbian]
