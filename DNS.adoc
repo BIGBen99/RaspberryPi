@@ -1,1 +1,1 @@
-= Install a https://en.wikipedia.org/wiki/Domain_Name_System[DNS] (https://www.isc.org/downloads/bind/[BIND 9]) on a https://www.raspberrypi.org/[Raspberry Pi]
+= Install a https://en.wikipedia.org/wiki/Domain_Name_System[DNS] (https://www.isc.org/downloads/bind/[BIND 9]) on a https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/[Raspberry Pi 3]
