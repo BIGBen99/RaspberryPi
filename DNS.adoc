@@ -1,1 +1,1 @@
-= Install a DNS on a https://www.raspberrypi.org/[Raspberry Pi]
+= Install a https://en.wikipedia.org/wiki/Domain_Name_System[DNS] on a https://www.raspberrypi.org/[Raspberry Pi]
