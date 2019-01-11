@@ -1,8 +1,8 @@
 = Install https://www.raspberrypi.org/downloads/raspbian/[Raspbian] on an SD Card
 BIGBen99
-v20190111-002
+v20190111-003
 
-This guide explains how to install Raspbian on an SD card.
+This guide explains how to install Raspbian on an SD card with a computer based on Linux system.
 
 == Prerequisites
 1 microSD card over 8GB +
@@ -15,10 +15,16 @@ You can find the official images of Raspbian in the https://www.raspberrypi.org/
 
 On Linux system, you can type in a terminal the command below to get the latest Raspbian lite image (Minimal image based on Debian without desktop and recommanded software).
 ....
-$ wget https://downloads.raspberrypi.org/raspbian_lite_latest
+$ wget https://downloads.raspberrypi.org/raspbian_lite_latest --output-document=raspbian_lite_latest.zip
 ....
 
-=== Write the downloaded image to the SD card
+=== Unzip to get the image
+Unzip the file you downloaded to the image file (.img)
+....
+$ unzip raspbian_lite_latest.zip
+....
+
+=== Write the image file to the SD card
 
 == Conclusion
 You now have a microSD card with the Raspbian operating system installed. Your SD card is ready to be used in a https://www.raspberrypi.org/products/[Raspberry Pi board]
