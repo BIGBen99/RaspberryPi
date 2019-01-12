@@ -1,6 +1,6 @@
 = Install https://www.raspberrypi.org/downloads/raspbian/[Raspbian] on an SD Card
 BIGBen99
-v20190112-001
+v20190112-002
 
 This guide explains how to install Raspbian on an SD card with a computer based on Linux system.
 
@@ -25,15 +25,28 @@ $ unzip raspbian_lite_latest.zip
 ....
 
 === Discovering the SD card mountpoint and unmounting it
-
+List disk partition table to identify your SD card mountpoint
 ....
 $ fdisk -l | grep "Disk /"
+....
+
+Unmount your SD card
+....
+$ umount /dev/SD_CARD_MOUNTPOINT*
 ....
 
 === Copying the image to the SD card
 
 ....
 $ dd if=PATH_TO_THE_IMAGE_FILE of=DEVICE_NAME bs=4M status=progress conv=fsync
+....
+
+=== Enable SSH
+SSH can be enabled by placing a file named ssh, without any extension, onto the boot partition of the SD card.
+
+In a terminal, once you are located onto the boot partition, type the command below
+....
+$ touch ssh
 ....
 
 == Conclusion
