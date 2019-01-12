@@ -1,6 +1,6 @@
 = Install https://www.raspberrypi.org/downloads/raspbian/[Raspbian] on an SD Card
 BIGBen99
-v20190111-004
+v20190112-001
 
 This guide explains how to install Raspbian on an SD card with a computer based on Linux system.
 
@@ -25,6 +25,10 @@ $ unzip raspbian_lite_latest.zip
 ....
 
 === Discovering the SD card mountpoint and unmounting it
+
+....
+$ fdisk -l | grep "Disk /"
+....
 
 === Copying the image to the SD card
 
